@@ -1666,7 +1666,7 @@ const MessageContainer = ({
 
   const fetchApi = async () => {
     try {
-      const result = await fetch();
+      const result = await fetch(answers);
       setFetchResult(result);
     } catch (err) {
       console.error(err);
