@@ -1526,6 +1526,7 @@ const Message = styled__default['default'].div`
     border-top-right-radius: ${props => props.isUser ? '0px' : '20px'};
     margin-bottom: 10px;
     color: ${props => props.theme.textColor};
+    flex-direction: column;
     box-shadow: rgb(0 0 0 / 25%) 0px 12px 24px 0px;
 `;
 const OptionsContainer = styled__default['default'].div`    
