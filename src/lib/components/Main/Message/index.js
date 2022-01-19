@@ -55,7 +55,7 @@ const MessageContainer = ({
       if (!options) setIsDisabled(false);
     } else triggerNext();
 
-    scrollToBottom();
+    // scrollToBottom();
   }
 
   useEffect(() => {
@@ -72,11 +72,11 @@ const MessageContainer = ({
         }
       }
 
-      scrollToBottom();
+      // scrollToBottom();
     }
 
     sync();
-  });
+  }, [fetch]);
 
   const callHandleAnswer = (option) => {
     handleAnswer(option);
