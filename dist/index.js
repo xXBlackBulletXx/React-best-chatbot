@@ -1628,17 +1628,6 @@ const Loading = styled__default['default'].div`
     }
 `;
 
-const scrollToBottom = () => {
-  const element = document.getElementById('lf-chat-body');
-
-  if (element) {
-    element.scrollTo({
-      top: element.scrollHeight,
-      behavior: 'smooth'
-    });
-  }
-};
-
 const MessageContainer = ({
   message,
   answers,
@@ -1679,9 +1668,8 @@ const MessageContainer = ({
 
     if (receiveInput || options) {
       if (!options) setIsDisabled(false);
-    } else triggerNext();
+    } else triggerNext(); // scrollToBottom();
 
-    scrollToBottom();
   };
 
   React.useEffect(() => {
@@ -1695,13 +1683,12 @@ const MessageContainer = ({
             configureFlow();
           }, delay);
         }
-      }
+      } // scrollToBottom();
 
-      scrollToBottom();
     };
 
     sync();
-  });
+  }, [fetch]);
 
   const callHandleAnswer = option => {
     handleAnswer(option);
